@@ -121,7 +121,7 @@ def __virtual__():
 
         parameters = details['gce']
         pathname = os.path.expanduser(parameters['service_account_private_key'])
-        if salt.utils.cloud.check_key_path_and_mode(
+        if pathname and salt.utils.cloud.check_key_path_and_mode(
                 provider, pathname
         ) is False:
             return False
